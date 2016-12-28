@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161226133054) do
+ActiveRecord::Schema.define(version: 20161228025040) do
 
   create_table "controls", force: :cascade do |t|
     t.string   "name"
     t.string   "lot"
-    t.string   "start"
-    t.string   "expiration"
+    t.date     "start"
+    t.date     "expiration"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

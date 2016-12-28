@@ -6,7 +6,7 @@ RSpec.feature "Create Home Page" do
   
   expect(page).to have_link('Home')
   expect(page).to have_link('Control')
-  expect(page).to have_content('Current Controls')
+  expect(page).to have_content('Home action in dashboard controller')
   
   end
 end

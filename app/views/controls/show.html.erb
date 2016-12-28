@@ -9,6 +9,8 @@
         <li class="list-group-item"><strong>Expiration:</strong> <%= @control.expiration %></li>
         <li class="list-group-item"><strong>Lot number:</strong> <%= @control.lot %></li>
       </ul>
+      
+      <%= link_to  "New Control", new_control_path, class: 'btn btn-danger' %>
     </div>
   </div>
 </div>

@@ -10,9 +10,10 @@ class ControlsController < ApplicationController
   def create
     @control = Control.new(control_params)
       if @control.save
-        flash[:success] = "Control Saved"
+        flash[:notice] = "Control Saved"
         redirect_to @control
       else
+        flash.now[:alert] = "Control failed to saved"
         render :new
       end 
   end
