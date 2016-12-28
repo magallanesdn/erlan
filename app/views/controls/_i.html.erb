@@ -1,0 +1,28 @@
+<h3 class = "text-center">Current Controls</h3>
+
+<div class="row">  
+  <div class="col-md-offset-1 col-md-10">
+    <table class="table-striped table">
+      <tr>
+        <th>QC Name</th>
+        <th>Lot number</th>
+        <th>Date Started</th>
+        <th>Expiration</th>
+      </tr>
+      
+      <% @controls.each do |control| %>
+        <tr>
+          <td><%= control.name %></td>
+          <td><%= control.lot %></td>
+          <td><%= control.start %></td>
+          <td><%= control.expiration %></td>
+        </tr>
+      <% end %>
+    </table>
+    
+    <br />
+    <%= link_to  "New Control", new_control_path, class: 'btn btn-primary' %>
+  </div>
+  
+</div>
+  

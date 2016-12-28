@@ -16,6 +16,7 @@ RSpec.feature "Creating control" do
     fill_in "QC name", with: "B29"
     fill_in "Lot number", with: "EA1234"
     fill_in "Started On", with: "2016-12-16"
+    fill_in "Expiration", with: "2017-12-16"
     click_button "Create Control"
     
     expect(page). to have_content("Control Saved")
