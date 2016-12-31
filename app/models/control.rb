@@ -8,4 +8,6 @@ class Control < ApplicationRecord
   validates :start, presence: true
   validates :expiration, presence: true
   validates :stock, presence: true
+  
+  default_scope { order(name: :asc) }
 end
