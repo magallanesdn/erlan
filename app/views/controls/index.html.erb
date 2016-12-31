@@ -1,1 +1,46 @@
-<%= render 'i' %> 
+<h3 class = "text-center">Current Controls</h3>
+
+<div class="row">  
+  <div class="col-md-offset-1 col-md-10">
+    <% if @controls.empty? %>
+      <h1 id="no-controls">No Controls Created</h1>
+    <% else %>
+      <table class="table">
+        <tr>
+          <th>QC Name</th>
+          <th>Item</th>
+          <th>Lot number</th>
+          <th>Date Started</th>
+          <th>Expiration</th>
+          <th>In Stock</th>
+          <% if user_signed_in? %>
+          <th class = "text-center">Action</th>
+          <% end %>
+        </tr>
+        
+        <% @controls.each do |control| %>
+          <tr class ="<%= control.stock < 5 ? 'low' : 'okay' %>">
+            <td><%= control.name %></td>
+            <td><%= control.item %></td>
+            <td><%= control.lot %></td>
+            <td><%= control.start %></td>
+            <td><%= control.expiration %></td>
+            <td><%= control.stock %></td>
+            <% if user_signed_in? %>
+            <td class ="text-center"><%= link_to "Edit", edit_control_path(control), class: 'btn btn-primary btn-sm' %> | <%= link_to "Delete", control_path(control),
+                                                                                       class: 'btn btn-danger btn-sm',
+                                                                                          method: :delete,
+                                                                                          data: { confirm: 'Are you sure?' } %> </td>
+            <% end %>                                                                              
+          </tr>
+        <% end %>
+      </table>
+    <% end %>
+    <br />
+    <% if user_signed_in? %>
+      <%= link_to  "New Control", new_control_path, class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+  
+</div>
+  

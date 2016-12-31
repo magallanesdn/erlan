@@ -7,4 +7,5 @@ class Control < ApplicationRecord
   validates :lot, presence: true
   validates :start, presence: true
   validates :expiration, presence: true
+  validates :stock, presence: true
 end

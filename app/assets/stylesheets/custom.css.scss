@@ -22,12 +22,14 @@ body {
   font-size: 1em;
   font-weight: bold;
 }
+.low {
+  background-color: #ff8080;
+}
+//TABLE INDEX
 
-.table-striped>tbody>tr:nth-child(odd)>td, 
-.table-striped>tbody>tr:nth-child(odd)>th {
-   background-color: #bfbfbf; // Choose your own color here
-  
- }
+th {
+  background-color: #b3b3ff;
+}
  
  td {
    line-height: -1;
@@ -47,3 +49,6 @@ tr > th, .table > tfoot > tr > td {
     vertical-align: top;
     border-top: 1px solid #ddd;
 }
+
+
+

@@ -18,6 +18,7 @@ RSpec.feature "Creating control" do
     fill_in "Lot number", with: "EA1234"
     fill_in "Started On", with: "2016-12-16"
     fill_in "Expiration", with: "2017-12-16"
+    fill_in "In Stock", with: 2
     click_button "Create Control"
     
     expect(page). to have_content("Control Saved")
@@ -38,6 +39,8 @@ RSpec.feature "Creating control" do
     fill_in "Lot number", with: " "
     fill_in "Started On", with: " "
     fill_in "Expiration", with: " "
+    fill_in "In Stock", with: " "
+    
     click_button "Create Control"
     
     expect(page). to have_content("Control failed to saved")
@@ -46,5 +49,6 @@ RSpec.feature "Creating control" do
     expect(page). to have_content("Lot can't be blank")
     expect(page). to have_content("Start can't be blank")
     expect(page). to have_content("Expiration can't be blank")
+    expect(page). to have_content("Stock can't be blank")
   end
 end

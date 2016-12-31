@@ -54,6 +54,6 @@ class ControlsController < ApplicationController
   end
   
   def control_params
-    params.require(:control).permit(:name, :lot, :start, :expiration, :item)
+    params.require(:control).permit(:name, :lot, :start, :expiration, :item, :stock)
   end
 end

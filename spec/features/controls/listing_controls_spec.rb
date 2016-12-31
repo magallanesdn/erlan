@@ -4,8 +4,8 @@ RSpec.feature "Listing controls" do
   before do
     @john = User.create(email: "john@example.com", password: "password")
     
-    @control1 = Control.create(name: "B29", item: "General Chemistry", lot: "EA1234", start: "2016-12-01", expiration: "2017-12-01" )
-    @control2 = Control.create(name: "B30", item: "General Chemistry", lot: "EA1235", start: "2016-12-02", expiration: "2017-12-02" )
+    @control1 = Control.create(name: "B29", item: "General Chemistry", lot: "EA1234", start: "2016-12-01", expiration: "2017-12-01", stock: 10 )
+    @control2 = Control.create(name: "B30", item: "General Chemistry", lot: "EA1235", start: "2016-12-02", expiration: "2017-12-02", stock: 12 )
   end
   
   scenario "Controls created with user sign in" do
@@ -19,11 +19,14 @@ RSpec.feature "Listing controls" do
     expect(page).to have_content(@control1.lot)
     expect(page).to have_content(@control1.start)
     expect(page).to have_content(@control1.expiration)
+    expect(page).to have_content(@control1.stock)
+    
     expect(page).to have_content(@control2.name)
     expect(page).to have_content(@control2.item)
     expect(page).to have_content(@control2.lot)
     expect(page).to have_content(@control2.start)
     expect(page).to have_content(@control2.expiration)
+    expect(page).to have_content(@control2.stock)
     
     expect(page).to have_link("New Control")
   end
@@ -39,11 +42,14 @@ RSpec.feature "Listing controls" do
     expect(page).to have_content(@control1.lot)
     expect(page).to have_content(@control1.start)
     expect(page).to have_content(@control1.expiration)
+    expect(page).to have_content(@control1.stock)
+    
     expect(page).to have_content(@control2.name)
     expect(page).to have_content(@control2.item)
     expect(page).to have_content(@control2.lot)
     expect(page).to have_content(@control2.start)
     expect(page).to have_content(@control2.expiration)
+    expect(page).to have_content(@control2.stock)
     
     expect(page).not_to have_link("New Control")
    

@@ -26,6 +26,12 @@
             <%= f.label(:expiration, "Expiration") %>
             <%= f. text_field :expiration, autofocus: true, class: 'form-control'  %>
         <div>
+        
+        <div class="field form-group">
+            <%= f. label(:stock, "In Stock") %>
+            <%= f.text_field :stock, autofocus: true, class: 'form-control' %>
+        </div>
+        
         <br />
         <div class="actions form-group">
             <%= f.submit(@control.new_record? ? "Create Control" : "Update", class: 'btn btn-success') %>
