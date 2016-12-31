@@ -34,7 +34,8 @@ class ControlsController < ApplicationController
        flash[:notice] = "Controls updated"
        redirect_to controls_path
      else
-       flash[:alert] = "Failed to update control"
+       flash.now[:alert] = "Failed to update control"
+       render :edit
      end
   end
   
@@ -53,6 +54,6 @@ class ControlsController < ApplicationController
   end
   
   def control_params
-    params.require(:control).permit(:name, :lot, :start, :expiration)
+    params.require(:control).permit(:name, :lot, :start, :expiration, :item)
   end
 end

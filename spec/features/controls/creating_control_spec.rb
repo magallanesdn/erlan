@@ -14,6 +14,7 @@ RSpec.feature "Creating control" do
     expect(page).to have_link("Back")
     
     fill_in "QC name", with: "B29"
+    fill_in "Item", with: "General Chemistry"
     fill_in "Lot number", with: "EA1234"
     fill_in "Started On", with: "2016-12-16"
     fill_in "Expiration", with: "2017-12-16"
@@ -33,6 +34,7 @@ RSpec.feature "Creating control" do
     expect(page).to have_link("Back")
     
     fill_in "QC name", with: " "
+    fill_in "Item", with: " "
     fill_in "Lot number", with: " "
     fill_in "Started On", with: " "
     fill_in "Expiration", with: " "
@@ -40,6 +42,7 @@ RSpec.feature "Creating control" do
     
     expect(page). to have_content("Control failed to saved")
     expect(page). to have_content("Name can't be blank")
+    expect(page). to have_content("Item can't be blank")
     expect(page). to have_content("Lot can't be blank")
     expect(page). to have_content("Start can't be blank")
     expect(page). to have_content("Expiration can't be blank")

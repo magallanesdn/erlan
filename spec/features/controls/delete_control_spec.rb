@@ -5,7 +5,7 @@ RSpec.feature "Deleting Control" do
     @john = User.create(email: "john@example.com", password: "password")
     login_as(@john)
     
-    @control = Control.create(name: "B29", lot: "EA1234", start: "2016-12-01", expiration: "2017-12-01" )
+    @control = Control.create(name: "B29", item: "General Chemistry", lot: "EA1234", start: "2016-12-01", expiration: "2017-12-01" )
   end
   
   scenario "A user delete a control" do

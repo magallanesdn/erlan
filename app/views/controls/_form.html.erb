@@ -8,6 +8,11 @@
         </div>
         
         <div class="field form-group">
+            <%= f.label(:item, "Item") %>
+            <%= f.text_field :item, autofocus: true, class: 'form-control' %>
+        </div>
+        
+        <div class="field form-group">
             <%= f. label(:lot, "Lot number") %>
             <%= f.text_field :lot, autofocus: true, class: 'form-control' %>
         </div>

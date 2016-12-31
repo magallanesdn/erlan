@@ -8,6 +8,7 @@
       <table class="table-striped table">
         <tr>
           <th>QC Name</th>
+          <th>Item</th>
           <th>Lot number</th>
           <th>Date Started</th>
           <th>Expiration</th>
@@ -19,6 +20,7 @@
         <% @controls.each do |control| %>
           <tr>
             <td><%= control.name %></td>
+            <td><%= control.item %></td>
             <td><%= control.lot %></td>
             <td><%= control.start %></td>
             <td><%= control.expiration %></td>
