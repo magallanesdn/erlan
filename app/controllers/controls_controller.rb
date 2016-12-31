@@ -1,4 +1,6 @@
 class ControlsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_control, only: [:show, :edit, :update, :destroy]
   def index
     @controls = Control.all
   end
@@ -19,15 +21,15 @@ class ControlsController < ApplicationController
   end
   
   def show
-    @control = Control.find(params[:id])
+    
   end
   
   def edit
-    @control = Control.find(params[:id])
+    
   end
   
   def update
-     @control = Control.find(params[:id])
+     
      if @control.update(control_params)
        flash[:notice] = "Controls updated"
        redirect_to controls_path
@@ -45,6 +47,10 @@ class ControlsController < ApplicationController
   end
   
   private
+  
+  def set_control
+    @control = Control.find(params[:id])
+  end
   
   def control_params
     params.require(:control).permit(:name, :lot, :start, :expiration)

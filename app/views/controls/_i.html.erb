@@ -2,31 +2,40 @@
 
 <div class="row">  
   <div class="col-md-offset-1 col-md-10">
-    <table class="table-striped table">
-      <tr>
-        <th>QC Name</th>
-        <th>Lot number</th>
-        <th>Date Started</th>
-        <th>Expiration</th>
-        <th class = "text-center">Action</th>
-      </tr>
-      
-      <% @controls.each do |control| %>
+    <% if @controls.empty? %>
+      <h1 id="no-controls">No Controls Created</h1>
+    <% else %>
+      <table class="table-striped table">
         <tr>
-          <td><%= control.name %></td>
-          <td><%= control.lot %></td>
-          <td><%= control.start %></td>
-          <td><%= control.expiration %></td>
-          <td class ="text-center"><%= link_to "Edit", edit_control_path(control), class: 'btn btn-primary btn-sm' %> | <%= link_to "Delete", control_path(control),
-                                                                                        class: 'btn btn-danger btn-sm',
-                                                                                        method: :delete,
-                                                                                        data: { confirm: 'Are you sure?' } %> </td>
+          <th>QC Name</th>
+          <th>Lot number</th>
+          <th>Date Started</th>
+          <th>Expiration</th>
+          <% if user_signed_in? %>
+          <th class = "text-center">Action</th>
+          <% end %>
         </tr>
-      <% end %>
-    </table>
-    
+        
+        <% @controls.each do |control| %>
+          <tr>
+            <td><%= control.name %></td>
+            <td><%= control.lot %></td>
+            <td><%= control.start %></td>
+            <td><%= control.expiration %></td>
+            <% if user_signed_in? %>
+            <td class ="text-center"><%= link_to "Edit", edit_control_path(control), class: 'btn btn-primary btn-sm' %> | <%= link_to "Delete", control_path(control),
+                                                                                       class: 'btn btn-danger btn-sm',
+                                                                                          method: :delete,
+                                                                                          data: { confirm: 'Are you sure?' } %> </td>
+            <% end %>                                                                              
+          </tr>
+        <% end %>
+      </table>
+    <% end %>
     <br />
-    <%= link_to  "New Control", new_control_path, class: 'btn btn-primary' %>
+    <% if user_signed_in? %>
+      <%= link_to  "New Control", new_control_path, class: 'btn btn-primary' %>
+    <% end %>
   </div>
   
 </div>
