@@ -8,6 +8,7 @@
         <th>Lot number</th>
         <th>Date Started</th>
         <th>Expiration</th>
+        <th class = "text-center">Action</th>
       </tr>
       
       <% @controls.each do |control| %>
@@ -16,6 +17,10 @@
           <td><%= control.lot %></td>
           <td><%= control.start %></td>
           <td><%= control.expiration %></td>
+          <td class ="text-center"><%= link_to "Edit", edit_control_path(control), class: 'btn btn-primary btn-sm' %> | <%= link_to "Delete", control_path(control),
+                                                                                        class: 'btn btn-danger btn-sm',
+                                                                                        method: :delete,
+                                                                                        data: { confirm: 'Are you sure?' } %> </td>
         </tr>
       <% end %>
     </table>

@@ -26,4 +26,24 @@ body {
 .table-striped>tbody>tr:nth-child(odd)>td, 
 .table-striped>tbody>tr:nth-child(odd)>th {
    background-color: #bfbfbf; // Choose your own color here
+  
  }
+ 
+ td {
+   line-height: -1;
+ }
+ 
+ //INDEX CONTROLS TABLE
+.btn-sm, .btn-group-sm > .btn {
+    padding: 4px 4px;
+    font-size: 12px;
+    line-height: 1;
+    border-radius: 4px;
+}
+
+tr > th, .table > tfoot > tr > td {
+    padding: 6px;
+    line-height: 1;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
+}

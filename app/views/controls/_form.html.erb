@@ -1,0 +1,31 @@
+<div class="col-md-offset-3 col-md-6 well ">
+    <%= render 'shared/errors', obj: @control %>
+    <br />
+    <%= form_for @control do |f| %>
+        <div class="field form-group">
+            <%= f.label(:name, "QC name") %>
+            <%= f.text_field :name, autofocus: true, class: 'form-control' %>
+        </div>
+        
+        <div class="field form-group">
+            <%= f. label(:lot, "Lot number") %>
+            <%= f.text_field :lot, autofocus: true, class: 'form-control' %>
+        </div>
+        
+        <div class="field form-group">
+            <%= f.label(:start, "Started On") %>
+            <%= f.text_field :start, autofocus: true, class: 'form-control' %>
+        </div>
+        
+        <div class="field form-group">
+            <%= f.label(:expiration, "Expiration") %>
+            <%= f. text_field :expiration, autofocus: true, class: 'form-control'  %>
+        <div>
+        <br />
+        <div class="actions form-group">
+            <%= f.submit(@control.new_record? ? "Create Control" : "Update", class: 'btn btn-success') %>
+        </div>
+    <% end %>
+
+    <%= link_to "Back", controls_path, class: 'btn btn-info' %>
+</div>

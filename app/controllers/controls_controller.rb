@@ -22,6 +22,28 @@ class ControlsController < ApplicationController
     @control = Control.find(params[:id])
   end
   
+  def edit
+    @control = Control.find(params[:id])
+  end
+  
+  def update
+     @control = Control.find(params[:id])
+     if @control.update(control_params)
+       flash[:notice] = "Controls updated"
+       redirect_to controls_path
+     else
+       flash[:alert] = "Failed to update control"
+     end
+  end
+  
+  def destroy
+    @control = Control.find(params[:id])
+    if @control.destroy
+      flash[:notice] = "Control has been deleted"
+      redirect_to controls_path
+    end
+  end
+  
   private
   
   def control_params

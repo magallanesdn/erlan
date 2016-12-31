@@ -25,4 +25,23 @@ RSpec.feature "Creating control" do
     expect(current_path).to eq(control_path(@control))
   end
   
+  scenario "with invalid inputs" do
+    visit "/"
+    
+    click_link "Controls"
+    click_link "New Control"
+    expect(page).to have_link("Back")
+    
+    fill_in "QC name", with: " "
+    fill_in "Lot number", with: " "
+    fill_in "Started On", with: " "
+    fill_in "Expiration", with: " "
+    click_button "Create Control"
+    
+    expect(page). to have_content("Control failed to saved")
+    expect(page). to have_content("Name can't be blank")
+    expect(page). to have_content("Lot can't be blank")
+    expect(page). to have_content("Start can't be blank")
+    expect(page). to have_content("Expiration can't be blank")
+  end
 end
