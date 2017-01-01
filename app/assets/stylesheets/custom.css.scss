@@ -1,6 +1,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+//IPHONE
+@media (max-width: 768px) {
+    
+  }
+  
 body {
   margin-top: 70px;
   margin-left: 10px;
@@ -51,4 +56,11 @@ tr > th, .table > tfoot > tr > td {
 }
 
 
+.miscreagent {
+  background-color: #96897f;
+}
+
+.rustic-light {
+  background-color: #c6bcb6;
+}
 
