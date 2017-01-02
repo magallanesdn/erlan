@@ -2,7 +2,12 @@
 @import "bootstrap";
 
 //IPHONE
-@media (max-width: 768px) {
+@media (max-width: 750px) {
+   body > header {
+     height: 35%;
+     background-color: blue;
+     width: 90%;
+   }
     
   }
   
