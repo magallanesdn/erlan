@@ -22,6 +22,13 @@ class MiscReagentsController < ApplicationController
     @misc_reagent = MiscReagent.find(params[:id])
   end
   
+  def destroy
+    @misc_reagent = MiscReagent.find(params[:id])
+    if @misc_reagent.destroy
+      flash[:notice] = "Reagent has been deleted"
+      redirect_to misc_reagents_path
+    end
+  end
   
   private
   
