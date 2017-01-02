@@ -30,6 +30,21 @@ class MiscReagentsController < ApplicationController
     end
   end
   
+  def edit
+    @misc_reagent = MiscReagent.find(params[:id])
+  end
+  
+  def update
+    @misc_reagent = MiscReagent.find(params[:id])
+    if @misc_reagent.update(misc_reagent_params)
+       flash[:notice] = "Reagents updated"
+       redirect_to misc_reagents_path
+    else
+       flash.now[:alert] = "Failed to update reagent"
+       render :edit
+    end
+  end
+  
   private
   
   def misc_reagent_params

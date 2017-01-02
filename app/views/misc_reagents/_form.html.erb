@@ -1,0 +1,41 @@
+<div class="col-md-offset-3 col-md-6 well ">
+    
+    <%= form_for @misc_reagent do |f| %>
+        <div class="field form-group">
+            <%= f.label(:kit, "Kit") %>
+            <%= f.text_field :kit, autofocus: true, class: 'form-control' %>
+        </div>
+        
+        <div class="field form-group">
+            <%= f. label(:lot, "Lot number") %>
+            <%= f.text_field :lot, autofocus: true, class: 'form-control' %>
+        </div>
+        
+        <div class="field form-group">
+            <%= f.label(:start, "Started On") %>
+            <%= f.text_field :start, autofocus: true, class: 'form-control' %>
+        </div>
+        
+        <div class="field form-group">
+            <%= f.label(:expiration, "Expiration") %>
+            <%= f. text_field :expiration, autofocus: true, class: 'form-control'  %>
+        <div>
+        
+        <div class="field form-group">
+            <%= f. label(:test_left, "Test left(open box)") %>
+            <%= f.text_field :test_left, autofocus: true, class: 'form-control' %>
+        </div>
+        
+        <div class="field form-group">
+            <%= f. label(:box, "Box)") %>
+            <%= f.text_field :box, autofocus: true, class: 'form-control' %>
+        </div>
+        
+        <br />
+        <div class="actions form-group">
+            <%= f.submit(@misc_reagent.new_record? ? "Create Reagent" : "Update", class: 'btn btn-success') %>
+        </div>
+    <% end %>
+
+    <%= link_to "Back", misc_reagents_path, class: 'btn btn-info' %>
+</div>

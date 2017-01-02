@@ -10,7 +10,8 @@
         <li class="list-group-item <%= misc_reagent.box == 0? 'low' : 'salmon'%>">Expiration: <%= misc_reagent.expiration %></li>
         <li class="list-group-item <%= misc_reagent.box == 0? 'low' : 'salmon'%>">Test Left: <span><small><em>(Open box)</em></small></span> <%= misc_reagent.test_left %></li>
         <li class="list-group-item <%= misc_reagent.box == 0? 'low' : 'salmon'%>">Box: <%= misc_reagent.box %></li>
-        <li class="list-group-item"><%= link_to "Delete", misc_reagent_path(misc_reagent), class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></li>
+        <li class="list-group-item"><%= link_to "Delete", misc_reagent_path(misc_reagent), class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>  |  
+        <%= link_to "Edit", edit_misc_reagent_path(misc_reagent), class: 'btn btn-primary'%></li>
       </ul>
     </div>
     <% end %>
