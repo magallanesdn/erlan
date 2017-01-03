@@ -3,25 +3,14 @@
 <div class="row ">
   <h3 class= "text-center"> <%= @misc_reagent.kit %> Reagent</h3>
       
-    <div class="col-md-offset-3 col-md-3 ">
+    <div class="col-md-offset-3 col-md-6 ">
       <ul class="list-group">
-        <li class="list-group-item  miscreagent"><strong>Kit :</strong></li>
-        <li class="list-group-item  miscreagent"><strong>Lot :</strong></li>
-        <li class="list-group-item  miscreagent"><strong>Start :</strong></li>
-        <li class="list-group-item  miscreagent"><strong>Expiration :</strong></li>
-        <li class="list-group-item  miscreagent"><strong>Test Left :</strong> <small><em>(Open box)</em></small></li>
-        <li class="list-group-item  miscreagent"><strong>Box:</strong></li> 
-      </ul>
-    </div>
-  
-    <div class="col-md-3 ">
-      <ul class="list-group">
-        <li class="list-group-item rustic-light"><%= @misc_reagent.kit %></li>
-        <li class="list-group-item rustic-light"><%= @misc_reagent.lot %></li>
-        <li class="list-group-item rustic-light"><%= @misc_reagent.start %></li>
-        <li class="list-group-item rustic-light"><%= @misc_reagent.expiration %></li>
-        <li class="list-group-item rustic-light"><%= @misc_reagent.test_left %></li>
-        <li class="list-group-item rustic-light"><%= @misc_reagent.box %></li>
+        <li class="list-group-item rustic-light"><strong>Kit : </strong><%= @misc_reagent.kit %></li>
+        <li class="list-group-item rustic-light"><strong>Lot : </strong><%= @misc_reagent.lot %></li>
+        <li class="list-group-item rustic-light"><strong>Start : </strong><%= @misc_reagent.start %></li>
+        <li class="list-group-item rustic-light"><strong>Expiration : </strong><%= @misc_reagent.expiration %></li>
+        <li class="list-group-item rustic-light"><strong>Test Left :</strong> <small><em>(Open box)</em></small><%= @misc_reagent.test_left %></li>
+        <li class="list-group-item rustic-light"><strong>Box:</strong> <%= @misc_reagent.box %></li>
       </ul>
     </div>
     
