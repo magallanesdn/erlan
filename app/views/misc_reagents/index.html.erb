@@ -5,7 +5,7 @@
       <ul class="list-group">
       
         <li class="list-group-item light-green"><strong><%= misc_reagent.kit %></strong></li>
-        <li class="list-group-item light-green"><span><i>Updated by <small><strong><%= cap_name %></strong> <br/><%= time_ago_in_words(misc_reagent.updated_at)%> ago</small></i></span> </li>
+        <li class="list-group-item light-green"><span><i>Updated <%= time_ago_in_words(misc_reagent.updated_at)%> ago</small></i></span> </li>
         <li class="list-group-item <%= misc_reagent.box == 0? 'low' : 'salmon'%>">Lot: <%= misc_reagent.lot %></li>
         <li class="list-group-item <%= misc_reagent.box == 0? 'low' : 'salmon'%>">Start: <%= misc_reagent.start %></li>
         <li class="list-group-item <%= misc_reagent.box == 0? 'low' : 'salmon'%>">Expiration: <%= misc_reagent.expiration %></li>
