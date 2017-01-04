@@ -1,10 +1,10 @@
 <div class="col-md-offset-3 col-md-6 well ">
-    <%= render 'shared/errors', obj: @misc_reagent %>
-    <br />
-    <%= form_for @misc_reagent do |f| %>
+  <%= render 'shared/errors', obj: @chem_reagent %>
+    
+    <%= form_for @chem_reagent do |f| %>
         <div class="field form-group">
-            <%= f.label(:kit, "Kit") %>
-            <%= f.text_field :kit, autofocus: true, class: 'form-control' %>
+            <%= f.label(:reagent, "Reagent") %>
+            <%= f.text_field :reagent, autofocus: true, class: 'form-control' %>
         </div>
         
         <div class="field form-group">
@@ -23,8 +23,8 @@
         <div>
         
         <div class="field form-group">
-            <%= f. label(:test_left, "Test left(open box)") %>
-            <%= f.text_field :test_left, autofocus: true, class: 'form-control' %>
+            <%= f. label(:flex, "Flex (open box)") %>
+            <%= f.text_field :flex, autofocus: true, class: 'form-control' %>
         </div>
         
         <div class="field form-group">
@@ -34,9 +34,9 @@
         
         <br />
         <div class="actions form-group">
-            <%= f.submit(@misc_reagent.new_record? ? "Create Reagent" : "Update", class: 'btn btn-success') %>
+            <%= f.submit(@chem_reagent.new_record? ? "Create Reagent" : "Update", class: 'btn btn-success') %>
         </div>
     <% end %>
 
-    <%= link_to "Back", misc_reagents_path, class: 'btn btn-info' %>
+    <%= link_to "Back", chem_reagents_path, class: 'btn btn-info' %>
 </div>

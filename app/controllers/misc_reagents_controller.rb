@@ -13,7 +13,7 @@ class MiscReagentsController < ApplicationController
       flash[:notice] = "Miscellaneous Reagent Saved"
       redirect_to @misc_reagent
     else
-      flash.now[:alert] = "Failed to saved"
+      flash.now[:alert] = " Reagent failed to saved"
       render 'new'
     end
   end

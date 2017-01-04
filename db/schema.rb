@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170102185956) do
+ActiveRecord::Schema.define(version: 20170103234015) do
+
+  create_table "chem_reagents", force: :cascade do |t|
+    t.string   "reagent"
+    t.string   "lot"
+    t.string   "start"
+    t.string   "expiration"
+    t.integer  "flex"
+    t.integer  "box"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "controls", force: :cascade do |t|
     t.string   "name"
