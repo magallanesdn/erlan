@@ -1,1 +1,12 @@
-<h1>Show Chem reagents</h1>
+<div class="row">
+  <div class="col-md-offset-3 col-md-6">
+    <h3 class= "text-center light-green"><%= @chem_reagent.reagent %></h3>
+    <ul class="list-group">
+      <li class="list-group-item light-gray">Lot: <%= @chem_reagent.lot %></li>
+      <li class="list-group-item light-gray">Start Date: <%= @chem_reagent.start %></li>
+      <li class="list-group-item light-gray">Expiration: <%= @chem_reagent.expiration %></li>
+      <li class="list-group-item light-gray">Flex: <%= @chem_reagent.flex %> </li>
+      <li class="list-group-item light-gray">Box: <%= @chem_reagent.box %></li>
+    </ul>
+  </div>
+</div>

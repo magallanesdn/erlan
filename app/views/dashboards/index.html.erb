@@ -1,4 +1,34 @@
 <div class="jumbotron">
-  <h3>Home action in dashboard controller</h3>
+  <h3>SUMMARY OF LOW REAGENTS</h3>
+  <ul class="list-group">
+  <% @chem_reagents.each do |chem_reagent| %>
+    <% if chem_reagent.box == 0 %>
+       <li class="list-group-item"><%= chem_reagent.reagent %> has no more box left</li> 
+    <% end %>
+    
+    <% if (chem_reagent.expiration.to_date - Date.today).to_i <= 30 %>
+       <li class="list-group-item"><%= chem_reagent.reagent %> has <%= distance_of_time_in_words_to_now(chem_reagent.expiration) %> before expiration</li> 
+    <% end %>
+  <% end %>
+  
+  <% @controls.each do |control| %>
+    <% if control.stock < 5 %>
+       <li class="list-group-item"><%= control.name %> has less than 5 in stocks</li> 
+    <% end %>
+    
+    <% if (control.expiration.to_date - Date.today).to_i <= 30 %>
+       <li class="list-group-item"><%= control.name %> has <%= distance_of_time_in_words_to_now(control.expiration) %> before expiration</li> 
+    <% end %>
+  <% end %>
+  
+  <% @misc_reagents.each do|misc_reagent| %>
+    <% if misc_reagent.box == 0 %>
+       <li class="list-group-item"><%= misc_reagent.kit %> has no more box left</li> 
+    <% end %>
+    <% if (misc_reagent.expiration.to_date - Date.today).to_i <= 30 %>
+       <li class="list-group-item"><%= misc_reagent.kit %> has <%= distance_of_time_in_words_to_now(misc_reagent.expiration) %> before expiration</li> 
+    <% end %>
+  <% end %>
+  </ul>
   
 </div>

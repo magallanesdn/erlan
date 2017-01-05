@@ -8,4 +8,6 @@ class MiscReagent < ApplicationRecord
   validates :expiration, presence: true
   validates :test_left, presence: true
   validates :box, presence: true
+  
+  default_scope { order(kit: :asc) }
 end

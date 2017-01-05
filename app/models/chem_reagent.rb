@@ -1,5 +1,5 @@
 class ChemReagent < ApplicationRecord
-  before_save {self.reagent = reagent.capitalize}
+  before_save {self.reagent = reagent.upcase}
   before_save {self.lot = lot.upcase}
   
   validates :reagent, presence: true

@@ -8,9 +8,9 @@ RSpec.feature "Create Chem Reagent" do
   
   scenario "with valid inputs" do
     visit "/"
-    
+  
     click_link "Chem Reagents"
-    click_link "New Reagent"
+    click_link "New Chem Reagent"
     expect(page).to have_link("Back")
     
     fill_in "Reagent", with: "ALT"
@@ -32,7 +32,7 @@ RSpec.feature "Create Chem Reagent" do
     visit "/"
     
     click_link "Chem Reagents"
-    click_link "New Reagent"
+    click_link "New Chem Reagent"
     expect(page).to have_link("Back")
     
     fill_in "Reagent", with: " "
