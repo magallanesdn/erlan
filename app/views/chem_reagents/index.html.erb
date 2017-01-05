@@ -41,6 +41,8 @@
                                     <% end %>
             </td>
             <% end %>
+            
+            <% if user_signed_in? %>
             <td class="text-center"><%= link_to chem_reagent_path(chem_reagent),
                                         class: 'btn btn-danger btn-sm',
                                         method: :delete,
@@ -48,6 +50,7 @@
                                           <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                                         <% end %>
                                         </td>
+            <% end %>
           </tr>
         <% end %>
       </table>
